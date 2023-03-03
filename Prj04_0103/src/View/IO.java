@@ -1,5 +1,6 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Model.Piatto;
@@ -16,13 +17,16 @@ public class IO {
 		System.out.print("Inserisci la tua Password: ");
 		String pwd = scannerS.nextLine();
 		System.out.println("\n");
-		System.out.print("Scegli la tua utenza (admin/user): ");
-		String utenza = scannerS.nextLine();
-		System.out.println("\n");
+		String utenza = "user";
+		/*
+		 * l'utente può registrarsi solo come utilizzatore (user) dell'app,
+		 * sarà poi l'amministratore di sistema in una visione più ampia del "progetto" 
+		 * a "decidere" se quell'utente avrà le credenziali da admin.
+		*/
 		Utente u = new Utente(user, pwd, utenza);
 		return u;
 	}
-	
+
 	public static Piatto registraPiatto() {
 		System.out.print("\nInserisci nome piatto: ");
 		String nomePiatto = scannerS.nextLine();
